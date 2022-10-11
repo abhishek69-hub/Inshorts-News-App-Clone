@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react';
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
@@ -14,7 +14,7 @@ export default function News(props) {
 
     const updateNews = async () => {
 
-        let url  = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=30e0bd74b19547c09904228551975e6d&page=${page}&pageSize=${props.pageSize}`;
+        let url  = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=e4ae48557b484229b0656655a6ba3f4e&page=${page}&pageSize=${props.pageSize}`;
 
         
 
@@ -30,12 +30,12 @@ export default function News(props) {
 
     useEffect(() => {
         updateNews()
-    }, [])
+    })
 
 
     const fetchMoreData = async()=>{
   
-        let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=30e0bd74b19547c09904228551975e6d&page=${page+1}&pageSize=${props.pageSize}`;
+        let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=e4ae48557b484229b0656655a6ba3f4e&page=${page+1}&pageSize=${props.pageSize}`;
         setPage(page+1)
         let data= await fetch(url) 
         let parsedData=await data.json()
@@ -87,7 +87,7 @@ export default function News(props) {
     <InfiniteScroll
         dataLength={articles.length}
         next={fetchMoreData}
-        hasMore={articles.length() !== totalResults}
+        hasMore={articles.length !== totalResults}
         loader={<Spinner />}
     >
         
@@ -117,5 +117,5 @@ News.defaultProps = {
     country: "in",
     pageSize: 8,
     category: "technology",
-    key:"technology"
+    // key:"technology"
   };

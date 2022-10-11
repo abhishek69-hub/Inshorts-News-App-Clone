@@ -12,15 +12,6 @@ export default function Navbar() {
 
             
 
-                {/* <div className="relative w-full lg:max-w-sm">
-                    <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
-                        <option><a className="nav-link" href="/general">General</a> </option>
-                        <option><a className="nav-link" href="/business">Business</a> </option>
-                        <option><a href="/health">Health</a> </option>
-                        
-                    </select>
-                </div> */}
-
             </div>
             <div className='w-full flex items-center justify-center h-[32px] bg-black'>
                 <ul className='w-full h-full flex items-center justify-center overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide relative '>
